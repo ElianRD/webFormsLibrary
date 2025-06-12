@@ -1,0 +1,7 @@
+﻿.mi-clase-error {
+    padding-left:10px;
+    padding-top:40px;
+    color: #ff0000; /* o cualquier color que quieras */
+    background-color: transparent; /* o lo que necesites */
+    font-weight: bold; /* opcional */
+}

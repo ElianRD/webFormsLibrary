@@ -1,0 +1,12 @@
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Domain\bin\Debug\Domain.dll.config
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Domain\bin\Debug\Domain.dll
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Domain\bin\Debug\Domain.pdb
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Domain\bin\Debug\EntityFramework.dll
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Domain\bin\Debug\EntityFramework.xml
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Domain\obj\Debug\Domain.csproj.Up2Date
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Domain\obj\Debug\Domain.dll
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Domain\obj\Debug\Domain.pdb
