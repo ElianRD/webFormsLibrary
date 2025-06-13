@@ -7,29 +7,29 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CRUDOnboarding
+namespace CRUDOnboarding.Clientes
 {
 
 
-    public partial class About
+    public partial class Site1
     {
 
         /// <summary>
-        /// Control gvAutores.
+        /// Control form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvAutores;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control btnLoad.
+        /// Control ContentPlaceHolder1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLoad;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
     }
 }

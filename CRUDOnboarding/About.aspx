@@ -29,11 +29,3 @@
 
 
 </asp:Content>
-<%--<asp:GridView ID="gvProducts" runat="server" AutoGenerateColumns="false">
-    <Columns>
-        <asp:BoundField DataField="ProductId" HeaderText="ID" />
-        <asp:BoundField DataField="Name" HeaderText="Nombre" />
-        <asp:BoundField DataField="Price" HeaderText="Precio" />
-    </Columns>
-</asp:GridView>
-<asp:Button ID="btnLoad" runat="server" Text="Cargar Productos" OnClick="btnLoad_Click" />--%>
