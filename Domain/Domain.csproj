@@ -68,6 +68,7 @@
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Entities\UsuarioRol.cs" />
     <Compile Include="Entities\Venta.cs" />
+    <Compile Include="Interfaces\IGenericRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

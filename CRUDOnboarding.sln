@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUDOnboarding", "CRUDOnboa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{CCC09AD3-36E2-4948-A961-96664FE780D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Service\Services.csproj", "{34A66784-4BAF-45DF-9818-24E4B66349B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Service\Application.csproj", "{34A66784-4BAF-45DF-9818-24E4B66349B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{7E5E7348-D5D9-469C-92CF-79793BCB47E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{34A66784-4BAF-45DF-9818-24E4B66349B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34A66784-4BAF-45DF-9818-24E4B66349B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34A66784-4BAF-45DF-9818-24E4B66349B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E5E7348-D5D9-469C-92CF-79793BCB47E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E5E7348-D5D9-469C-92CF-79793BCB47E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E5E7348-D5D9-469C-92CF-79793BCB47E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E5E7348-D5D9-469C-92CF-79793BCB47E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
