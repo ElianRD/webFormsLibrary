@@ -15,6 +15,15 @@ namespace CRUDOnboarding
     {
 
         /// <summary>
+        /// lblMensaje control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
+
+        /// <summary>
         /// gvAutores control.
         /// </summary>
         /// <remarks>
@@ -69,15 +78,6 @@ namespace CRUDOnboarding
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
-        /// rfvNombre control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
-
-        /// <summary>
         /// lblApellido control.
         /// </summary>
         /// <remarks>
@@ -94,15 +94,6 @@ namespace CRUDOnboarding
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtApellido;
-
-        /// <summary>
-        /// rfvApellido control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvApellido;
 
         /// <summary>
         /// lblBiografia control.

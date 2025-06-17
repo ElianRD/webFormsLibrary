@@ -1,4 +1,4 @@
-﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="CRUDOnboarding.About" %>
+﻿<%@ Page Title="About"  Async="true" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="CRUDOnboarding.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title">
@@ -10,7 +10,6 @@
     <asp:TextBox ID="txtNombre" runat="server" />
     <asp:TextBox ID="txtNacionalidad" runat="server" />
     <asp:GridView ID="GridView1" runat="server" />
-    <asp:Label ID="lblMensaje" runat="server" />
     <asp:Button ID="btnCargar" runat="server" Text="Cargar Autores" OnClick="BtnCargar_Click" />
     <asp:Button ID="btnBuscar" runat="server" Text="Buscar Autor" OnClick="BtnBuscar_Click" />
     <asp:Button ID="btnAgregar" runat="server" Text="Agregar Autor" OnClick="BtnAgregar_Click" />
@@ -18,6 +17,7 @@
     <asp:Button ID="btnEliminar" runat="server" Text="Eliminar Autor" OnClick="BtnEliminar_Click" />--%>
 
 
+    <asp:Label ID="lblMensaje" runat="server" />
 
 
     <div class="table-responsive">
@@ -50,26 +50,26 @@
             <!-- Nombre -->
             <asp:Label ID="lblNombre" runat="server" Text="Nombre:" AssociatedControlID="txtNombre" />
             <asp:TextBox ID="txtNombre" runat="server" />
-            <asp:RequiredFieldValidator 
+<%--            <asp:RequiredFieldValidator 
                 ID="rfvNombre" 
                 runat="server" 
                 ControlToValidate="txtNombre" 
                 ErrorMessage="El nombre es requerido." 
                 ForeColor="Red" 
-                Display="Dynamic" />
+                Display="Dynamic" />--%>
 
             <br /><br />
 
             <!-- Apellido -->
             <asp:Label ID="lblApellido" runat="server" Text="Apellido:" AssociatedControlID="txtApellido" />
             <asp:TextBox ID="txtApellido" runat="server" />
-            <asp:RequiredFieldValidator 
+<%--            <asp:RequiredFieldValidator 
                 ID="rfvApellido" 
                 runat="server" 
                 ControlToValidate="txtApellido" 
                 ErrorMessage="El apellido es requerido." 
                 ForeColor="Red" 
-                Display="Dynamic" />
+                Display="Dynamic" />--%>
 
             <br /><br />
 

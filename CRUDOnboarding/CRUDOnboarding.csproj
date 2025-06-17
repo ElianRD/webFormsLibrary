@@ -107,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Autores\ActualizarAutor.aspx" />
+    <Content Include="Autores\Autores.aspx" />
+    <Content Include="Autores\CrearAutor.aspx" />
+    <Content Include="Categorias\ActualizarCategoria.aspx" />
+    <Content Include="Categorias\Categorias.aspx" />
+    <Content Include="Categorias\CrearCategoria.aspx" />
     <Content Include="Clientes\Home.aspx" />
     <Content Include="Clientes\Libros.aspx" />
     <Content Include="Clientes\Autores.aspx" />
@@ -129,9 +135,15 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Dashboard.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="LibroForm.aspx" />
+    <Content Include="LibroFormNormal.aspx" />
+    <Content Include="Libros\ActualizarLibro.aspx" />
+    <Content Include="Libros\CrearLibro.aspx" />
+    <Content Include="Libros\Libros.aspx" />
     <Content Include="Login\WebForm1.aspx" />
     <Content Include="Login\WebForm2.aspx" />
     <Content Include="Resources\css\StyleSheet1.css" />
@@ -163,6 +175,12 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Usuarios\ActualizarUsuario.aspx" />
+    <Content Include="Usuarios\CrearUsuario.aspx" />
+    <Content Include="Usuarios\Usuarios.aspx" />
+    <Content Include="Ventas\ActualizarVenta.aspx" />
+    <Content Include="Ventas\CrearVenta.aspx" />
+    <Content Include="Ventas\Ventas.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="Clientes\Site1.Master" />
@@ -211,6 +229,48 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Autores\ActualizarAutor.aspx.cs">
+      <DependentUpon>ActualizarAutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Autores\ActualizarAutor.aspx.designer.cs">
+      <DependentUpon>ActualizarAutor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Autores\Autores.aspx.cs">
+      <DependentUpon>Autores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Autores\Autores.aspx.designer.cs">
+      <DependentUpon>Autores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Autores\CrearAutor.aspx.cs">
+      <DependentUpon>CrearAutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Autores\CrearAutor.aspx.designer.cs">
+      <DependentUpon>CrearAutor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Categorias\ActualizarCategoria.aspx.cs">
+      <DependentUpon>ActualizarCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categorias\ActualizarCategoria.aspx.designer.cs">
+      <DependentUpon>ActualizarCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Categorias\Categorias.aspx.cs">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categorias\Categorias.aspx.designer.cs">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Categorias\CrearCategoria.aspx.cs">
+      <DependentUpon>CrearCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categorias\CrearCategoria.aspx.designer.cs">
+      <DependentUpon>CrearCategoria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Clientes\Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -253,6 +313,13 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -276,6 +343,40 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LibroForm.aspx.cs">
+      <DependentUpon>LibroForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LibroForm.aspx.designer.cs">
+      <DependentUpon>LibroForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibroFormNormal.aspx.cs">
+      <DependentUpon>LibroFormNormal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibroFormNormal.aspx.designer.cs">
+      <DependentUpon>LibroFormNormal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Libros\ActualizarLibro.aspx.cs">
+      <DependentUpon>ActualizarLibro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Libros\ActualizarLibro.aspx.designer.cs">
+      <DependentUpon>ActualizarLibro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Libros\CrearLibro.aspx.cs">
+      <DependentUpon>CrearLibro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Libros\CrearLibro.aspx.designer.cs">
+      <DependentUpon>CrearLibro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Libros\Libros.aspx.cs">
+      <DependentUpon>Libros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Libros\Libros.aspx.designer.cs">
+      <DependentUpon>Libros.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -306,6 +407,55 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\ActualizarUsuario.aspx.cs">
+      <DependentUpon>ActualizarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuarios\ActualizarUsuario.aspx.designer.cs">
+      <DependentUpon>ActualizarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\CrearUsuario.aspx.cs">
+      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuarios\CrearUsuario.aspx.designer.cs">
+      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\Usuarios.aspx.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Usuarios.aspx.designer.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\ActualizarVenta.aspx.cs">
+      <DependentUpon>ActualizarVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ventas\ActualizarVenta.aspx.designer.cs">
+      <DependentUpon>ActualizarVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\CrearVenta.aspx.cs">
+      <DependentUpon>CrearVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ventas\CrearVenta.aspx.designer.cs">
+      <DependentUpon>CrearVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Ventas.aspx.cs">
+      <DependentUpon>Ventas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ventas\Ventas.aspx.designer.cs">
+      <DependentUpon>Ventas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -335,6 +485,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
+    <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

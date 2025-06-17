@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +59,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AutorRepository.cs" />
+    <Compile Include="Servicios\ImagenService.cs" />
+    <Compile Include="Servicios\ImagenServiceNormal.cs" />
     <Compile Include="Sos.cs" />
     <Compile Include="Context\LibreriaDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
