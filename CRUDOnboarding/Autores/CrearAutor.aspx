@@ -1,6 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="CrearAutor.aspx.cs" Inherits="CRUDOnboarding.Autores.CrearAutor" %>
+﻿<%@ Page Title="CrearAutores" Language="C#" Async="true" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="CrearAutor.aspx.cs" Inherits="CRUDOnboarding.Autores.CrearAutor" %>
 
 <asp:Content ID="HeadCrearAutor" ContentPlaceHolderID="head" runat="server">
+    <title>Gestión de Autores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         .image-preview {
             max-width: 200px;
@@ -9,7 +11,6 @@
             padding: 5px;
             margin: 10px 0;
         }
-
         .file-upload-container {
             border: 2px dashed #ccc;
             border-radius: 10px;
@@ -17,11 +18,34 @@
             text-align: center;
             margin: 10px 0;
         }
+        .file-upload-container:hover {
+            border-color: #007bff;
+            background-color: #f8f9fa;
+        }
 
-            .file-upload-container:hover {
-                border-color: #007bff;
-                background-color: #f8f9fa;
-            }
+        .tab-menu {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      margin: 20px 0;
+    }
+
+    .tab-menu a {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #1d4ed8;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab-menu a.active {
+      color: #000;
+      border-bottom: 3px solid #1d4ed8;
+    }
+
+    .tab-menu a:hover {
+      color: #1d4ed8;
+    }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent1" runat="server">
@@ -29,6 +53,10 @@
 
 
     <h1>Panel de Autores</h1>
+      <div class="tab-menu">
+    <a href="#" class="active">List Books</a>
+    <a href="#">Create Book</a>
+  </div>
     <div class="row my-4">
         <div class="col-md-3">
             <div class="card text-white bg-primary mb-3">
@@ -57,174 +85,120 @@
     </div>
 
     <h2>Crear Autor</h2>
-    <form id="form1" runat="server">
+      <form id="form1" runat="server">
         <div class="container mt-4">
             <div class="row">
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">
-                            <h3>Información del Libro</h3>
+                            <h3>Información del Autor</h3>
                         </div>
                         <div class="card-body">
-                            <!-- Mensaje de estado -->
                             <asp:Label ID="lblMensaje" runat="server" Visible="false"></asp:Label>
-
-                            <!-- Campo oculto para ID del libro (para edición) -->
-                            <asp:HiddenField ID="hfLibroId" runat="server" />
-
-                            <!-- Título -->
+                            
+                            <asp:HiddenField ID="hfAutorId" runat="server" />
+                            
                             <div class="mb-3">
-                                <label for="txtTitulo" class="form-label">Título *</label>
-                                <asp:TextBox ID="txtTitulo" runat="server" CssClass="form-control" MaxLength="200" required></asp:TextBox>
+                                <label for="txtNombre" class="form-label">Nombre *</label>
+                                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" MaxLength="100" ></asp:TextBox>
                             </div>
-
-                            <!-- ISBN -->
+                            
                             <div class="mb-3">
-                                <label for="txtISBN" class="form-label">ISBN</label>
-                                <asp:TextBox ID="txtISBN" runat="server" CssClass="form-control" MaxLength="13"></asp:TextBox>
+                                <label for="txtApellido" class="form-label">Apellido *</label>
+                                <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" MaxLength="100" ></asp:TextBox>
                             </div>
-
-                            <!-- Descripción -->
+                            
                             <div class="mb-3">
-                                <label for="txtDescripcion" class="form-label">Descripción</label>
-                                <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="4" MaxLength="1000"></asp:TextBox>
+                                <label for="txtBiografia" class="form-label">Biografía</label>
+                                <asp:TextBox ID="txtBiografia" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="4" MaxLength="1000"></asp:TextBox>
                             </div>
-
-                            <!-- Precio y Stock -->
+                            
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="txtPrecio" class="form-label">Precio *</label>
-                                        <asp:TextBox ID="txtPrecio" runat="server" CssClass="form-control" TextMode="Number" step="0.01" required></asp:TextBox>
+                                        <label for="txtFechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                                        <asp:TextBox ID="txtFechaNacimiento" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="txtStock" class="form-label">Stock *</label>
-                                        <asp:TextBox ID="txtStock" runat="server" CssClass="form-control" TextMode="Number" required></asp:TextBox>
+                                        <label for="txtNacionalidad" class="form-label">Nacionalidad</label>
+                                        <asp:TextBox ID="txtNacionalidad" runat="server" CssClass="form-control" MaxLength="100"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Editorial -->
-                            <div class="mb-3">
-                                <label for="ddlEditorial" class="form-label">Editorial *</label>
-                                <asp:DropDownList ID="ddlEditorial" runat="server" CssClass="form-select" required>
-                                    <asp:ListItem Text="Seleccione una editorial" Value="" />
-                                    <asp:ListItem Text="Editorial Planeta" Value="Planeta" />
-                                    <asp:ListItem Text="Penguin Random House" Value="PenguinRandomHouse" />
-                                    <asp:ListItem Text="HarperCollins" Value="HarperCollins" />
-                                    <asp:ListItem Text="Simon & Schuster" Value="SimonSchuster" />
-                                    <asp:ListItem Text="Grupo SM" Value="SM" />
-                                    <asp:ListItem Text="Santillana" Value="Santillana" />
-                                    <asp:ListItem Text="McGraw-Hill" Value="McGrawHill" />
-                                </asp:DropDownList>
-                            </div>
-
-
-                            <!-- Botones -->
+                            
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <asp:Button ID="btnGuardarLibro" runat="server" Text="Guardar Libro" CssClass="btn btn-primary" OnClick="btnGuardarLibro_Click" />
-                                <asp:Button ID="btnActualizarLibro" runat="server" Text="Actualizar Libro" CssClass="btn btn-warning" OnClick="btnActualizarLibro_Click" Visible="false" />
+                                <asp:Button ID="btnGuardarAutor" runat="server" Text="Guardar Autor" CssClass="btn btn-primary" OnClick="btnGuardarAutor_Click" />
+                                <asp:Button ID="btnActualizarAutor" runat="server" Text="Actualizar Autor" CssClass="btn btn-warning" OnClick="btnActualizarAutor_Click" Visible="false" />
                                 <button type="button" class="btn btn-secondary" onclick="limpiarFormulario()">Limpiar</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Panel de imagen -->
+                
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Imagen de Portada</h5>
+                            <h5>Foto de Perfil del Autor</h5>
                         </div>
                         <div class="card-body">
-                            <!-- Upload de imagen -->
                             <div class="file-upload-container">
-                                <asp:FileUpload ID="fileUploadPortada" runat="server" CssClass="form-control" accept=".jpg,.jpeg,.png,.gif" />
-                                <small class="form-text text-muted mt-2">Formatos permitidos: JPG, PNG, GIF<br />
+                                <asp:FileUpload ID="fileUploadFotoPerfil" runat="server" CssClass="form-control" accept=".jpg,.jpeg,.png,.gif" />
+                                <small class="form-text text-muted mt-2">
+                                    Formatos permitidos: JPG, PNG, GIF<br/>
                                     Tamaño máximo: 5MB
                                 </small>
                             </div>
-
-                            <!-- Preview de imagen -->
+                            
                             <div class="text-center">
                                 <asp:Image ID="imgPreview" runat="server" CssClass="image-preview" Visible="false" />
                             </div>
-
-                            <!-- Botón para preview -->
+                            
                             <div class="d-grid mt-2">
-                                <asp:Button ID="btnPreview" runat="server" Text="Vista Previa" CssClass="btn btn-outline-secondary btn-sm" OnClick="fileUploadPortada_FileUploaded" />
+                                <asp:Button ID="btnPreview" runat="server" Text="Vista Previa" CssClass="btn btn-outline-secondary btn-sm" OnClick="fileUploadFotoPerfil_FileUploaded" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Panel para foto de perfil de cliente (ejemplo adicional) -->
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5>Actualizar Foto de Perfil</h5>
-                        </div>
-                        <div class="card-body">
-                            <asp:HiddenField ID="hfClienteId" runat="server" />
-
-                            <div class="mb-3">
-                                <asp:FileUpload ID="fileUploadFotoPerfil" runat="server" CssClass="form-control" accept=".jpg,.jpeg,.png,.gif" />
-                            </div>
-
-                            <div class="d-grid">
-                                <asp:Button ID="btnSubirFotoPerfil" runat="server" Text="Actualizar Foto" CssClass="btn btn-success" OnClick="btnSubirFotoPerfil_Click" />
-                            </div>
-
-                            <!-- Preview de foto de perfil -->
-                            <div class="text-center mt-3">
-                                <asp:Image ID="imgFotoPerfil" runat="server" CssClass="rounded-circle" Width="100" Height="100" Visible="false" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
-
-        <!-- Scripts -->
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
             // Función para limpiar formulario
             function limpiarFormulario() {
-                document.getElementById('<%= txtTitulo.ClientID %>').value = '';
-             document.getElementById('<%= txtISBN.ClientID %>').value = '';
-             document.getElementById('<%= txtDescripcion.ClientID %>').value = '';
-             document.getElementById('<%= txtPrecio.ClientID %>').value = '';
-             document.getElementById('<%= txtStock.ClientID %>').value = '';
-             document.getElementById('<%= ddlEditorial.ClientID %>').selectedIndex = 0;
-             document.getElementById('<%= fileUploadPortada.ClientID %>').value = '';
-
-             // Ocultar imagen preview
-             var imgPreview = document.getElementById('<%= imgPreview.ClientID %>');
-             if (imgPreview) imgPreview.style.display = 'none';
-
-             // Limpiar mensaje
-             var lblMensaje = document.getElementById('<%= lblMensaje.ClientID %>');
+                document.getElementById('<%= txtNombre.ClientID %>').value = '';
+                document.getElementById('<%= txtApellido.ClientID %>').value = '';
+                document.getElementById('<%= txtBiografia.ClientID %>').value = '';
+                document.getElementById('<%= txtFechaNacimiento.ClientID %>').value = '';
+                document.getElementById('<%= txtNacionalidad.ClientID %>').value = '';
+                document.getElementById('<%= fileUploadFotoPerfil.ClientID %>').value = '';
+                
+                // Ocultar imagen preview
+                var imgPreview = document.getElementById('<%= imgPreview.ClientID %>');
+                if (imgPreview) imgPreview.style.display = 'none';
+                
+                // Limpiar mensaje
+                var lblMensaje = document.getElementById('<%= lblMensaje.ClientID %>');
                 if (lblMensaje) lblMensaje.style.display = 'none';
             }
-
+            
             // Preview de imagen en cliente (opcional)
-            document.getElementById('<%= fileUploadPortada.ClientID %>').addEventListener('change', function (e) {
+            document.getElementById('<%= fileUploadFotoPerfil.ClientID %>').addEventListener('change', function(e) {
                 var file = e.target.files[0];
                 if (file) {
                     var reader = new FileReader();
-                    reader.onload = function (e) {
+                    reader.onload = function(e) {
                         var imgPreview = document.getElementById('<%= imgPreview.ClientID %>');
-                     imgPreview.src = e.target.result;
-                     imgPreview.style.display = 'block';
-                 }
-                 reader.readAsDataURL(file);
-             }
-         });
-
+                        imgPreview.src = e.target.result;
+                        imgPreview.style.display = 'block';
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+            
             // Función para mostrar mensajes con auto-hide
             function mostrarMensaje(mensaje, tipo) {
                 var lblMensaje = document.getElementById('<%= lblMensaje.ClientID %>');
@@ -239,6 +213,4 @@
             }
         </script>
     </form>
-
-
 </asp:Content>

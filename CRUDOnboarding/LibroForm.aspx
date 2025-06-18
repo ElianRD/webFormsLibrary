@@ -47,7 +47,7 @@
                             <!-- Título -->
                             <div class="mb-3">
                                 <label for="txtTitulo" class="form-label">Título *</label>
-                                <asp:TextBox ID="txtTitulo" runat="server" CssClass="form-control" MaxLength="200" required></asp:TextBox>
+                                <asp:TextBox ID="txtTitulo" runat="server" CssClass="form-control" MaxLength="200" ></asp:TextBox>
                             </div>
 
                             <!-- ISBN -->

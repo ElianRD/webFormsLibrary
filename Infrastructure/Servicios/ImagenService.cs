@@ -25,7 +25,7 @@ namespace Infrastructure.Servicios
 
         private void CrearDirectorios()
         {
-            string[] directorios = { "Libros", "Usuarios", "Categorias" };
+            string[] directorios = { "Libros", "Usuarios", "Categorias", "Autores"};
 
             foreach (var dir in directorios)
             {
@@ -37,22 +37,26 @@ namespace Infrastructure.Servicios
             }
         }
 
-        public async Task<string> GuardarImagenLibroAsync(HttpPostedFileBase archivo, int libroId)
+        public async Task<string> GuardarImagenLibroAsync(HttpPostedFile archivo, int libroId)
         {
             return await GuardarImagenAsync(archivo, "Libros", $"libro_{libroId}");
         }
 
-        public async Task<string> GuardarImagenUsuarioAsync(HttpPostedFileBase archivo, int usuarioId)
+        public async Task<string> GuardarImagenUsuarioAsync(HttpPostedFile archivo, int usuarioId)
         {
             return await GuardarImagenAsync(archivo, "Usuarios", $"usuario_{usuarioId}");
         }
+        public async Task<string> GuardarImagenAutorAsync(HttpPostedFile archivo, int autorId)
+        {
+            return await GuardarImagenAsync(archivo, "Autores", $"autores_{autorId}");
+        }
 
-        public async Task<string> GuardarImagenCategoriaAsync(HttpPostedFileBase archivo, int categoriaId)
+        public async Task<string> GuardarImagenCategoriaAsync(HttpPostedFile archivo, int categoriaId)
         {
             return await GuardarImagenAsync(archivo, "Categorias", $"categoria_{categoriaId}");
         }
 
-        private async Task<string> GuardarImagenAsync(HttpPostedFileBase archivo, string carpeta, string prefijo)
+        private async Task<string> GuardarImagenAsync(HttpPostedFile archivo, string carpeta, string prefijo)
         {
             try
             {

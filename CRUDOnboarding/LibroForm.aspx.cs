@@ -59,10 +59,13 @@ namespace LibreriaApp
 
                 if (fileUploadPortada.HasFile)
                 {
-                    // Convertir a HttpPostedFileBase
-                    HttpPostedFileBase archivoBase = new HttpPostedFileWrapper(fileUploadPortada.PostedFile);
+                    // Ya es un HttpPostedFile
+                    HttpPostedFile archivo = fileUploadPortada.PostedFile;
 
-                    string rutaImagen = await _imagenService.GuardarImagenLibroAsync(archivoBase, libro.Id);
+                    // Aquí debes modificar tu método `GuardarImagenLibroAsync`
+                    // para que acepte `HttpPostedFile` en lugar de `HttpPostedFileBase`
+                    string rutaImagen = await _imagenService.GuardarImagenLibroAsync(archivo, libro.Id);
+
                     libro.ImagenPortada = rutaImagen;
 
                     _context.Entry(libro).State = System.Data.Entity.EntityState.Modified;
@@ -83,6 +86,7 @@ namespace LibreriaApp
             }
         }
 
+     
         // Evento para actualizar libro existente
         protected async void btnActualizarLibro_Click(object sender, EventArgs e)
         {
@@ -107,7 +111,8 @@ namespace LibreriaApp
 
                 if (fileUploadPortada.HasFile)
                 {
-                    HttpPostedFileBase archivoBase = new HttpPostedFileWrapper(fileUploadPortada.PostedFile);
+                    
+                    HttpPostedFile archivoBase = fileUploadPortada.PostedFile;
 
                     // Eliminar imagen anterior si existe
                     if (!string.IsNullOrEmpty(libro.ImagenPortada))
@@ -181,7 +186,9 @@ namespace LibreriaApp
 
                 if (fileUploadFotoPerfil.HasFile)
                 {
-                    HttpPostedFileBase archivoBase = new HttpPostedFileWrapper(fileUploadFotoPerfil.PostedFile);
+                    
+                    HttpPostedFile archivoBase = fileUploadPortada.PostedFile;
+
 
                     if (!string.IsNullOrEmpty(cliente.FotoPerfil))
                     {
