@@ -1,6 +1,6 @@
-C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\bin\Debug\Service.dll.config
-C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\bin\Debug\Service.dll
-C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\bin\Debug\Service.pdb
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\bin\Debug\Application.dll.config
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\bin\Debug\Application.dll
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\bin\Debug\Application.pdb
 C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\bin\Debug\Domain.dll
 C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\bin\Debug\EntityFramework.dll
 C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\bin\Debug\EntityFramework.SqlServer.dll
@@ -11,5 +11,5 @@ C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\bin\Debug\EntityFramework.
 C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\obj\Debug\Application.csproj.AssemblyReference.cache
 C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\obj\Debug\Application.csproj.CoreCompileInputs.cache
 C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\obj\Debug\Applicat.44B5EDA2.Up2Date
-C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\obj\Debug\Service.dll
-C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\obj\Debug\Service.pdb
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\obj\Debug\Application.dll
+C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\obj\Debug\Application.pdb

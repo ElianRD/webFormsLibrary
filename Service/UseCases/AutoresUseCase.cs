@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service.UseCases
+namespace Application.UseCases
 {
     public class AutoresUseCase
     {

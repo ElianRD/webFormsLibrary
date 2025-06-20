@@ -34,9 +34,10 @@
 
         <h2>Libros recientes</h2>
         <form runat="server">
-           
+
             <div class="table-responsive">
                 <asp:GridView ID="gvAutores" runat="server"
+                    OnRowCommand="gvAutores_RowCommand"
                     CssClass="table table-striped table-bordered table-hover"
                     ShowHeaderWhenEmpty="True"
                     EmptyDataText="No hay autores registrados." AutoGenerateColumns="False">
@@ -49,12 +50,19 @@
                         <asp:BoundField DataField="Nacionalidad" HeaderText="Nacionalidad" />
                         <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>
-                                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Select" Text="Actualizar" CssClass="btn btn-success"></asp:LinkButton>
+                                <asp:LinkButton ID="lnkVerDetalle" runat="server"
+                                    CommandName="Actualizar"
+                                    CommandArgument='<%# Eval("Id") %>'
+                                    Text="Actualizar"
+                                    CssClass="btn btn-success" />
+                                <%--<asp:LinkButton ID="lnkVerDetalle" runat="server" CausesValidation="False" CommandName="Actualizar" Text="Actualizar" CssClass="btn btn-success"></asp:LinkButton>--%>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>
-                                <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" CssClass="btn btn-danger"></asp:LinkButton>
+
+
+                                <asp:LinkButton ID="lnkEliminar" runat="server" CausesValidation="False" CommandName="Eliminar" CommandArgument='<%# Eval("Id") %>' Text="Eliminar" CssClass="btn btn-danger" OnClientClick="return confirm('¿Estás seguro de que deseas eliminar este libro?');" /></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

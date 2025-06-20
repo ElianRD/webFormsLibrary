@@ -2,7 +2,7 @@
 using Domain.Entities;
 using Infrastructure.Context;
 using Infrastructure.Repositories;
-using Service.UseCases;
+using Application.UseCases;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

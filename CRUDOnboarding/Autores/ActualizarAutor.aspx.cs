@@ -1,9 +1,12 @@
-﻿using Domain.Entities;
+﻿using Application.UseCases;
+using Domain.Entities;
 using Domain.Interfaces;
 using Infrastructure.Context;
+using Infrastructure.Repositories;
 using Infrastructure.Servicios;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -71,6 +74,13 @@ namespace CRUDOnboarding.Autores
         //    }
         //}
 
+        private AutoresUseCase CrearAutoresUseCase()
+        {
+            var context = new LibreriaDbContext();
+            var repo = new AutorRepository(context);
+            return new AutoresUseCase(repo);
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             _context = new LibreriaDbContext(); // Initialize your DbContext
@@ -85,6 +95,30 @@ namespace CRUDOnboarding.Autores
                     CargarAutorParaEdicion(autorId);
                 }
             }
+            if (!IsPostBack)
+            {
+                if (Session["AutorSeleccionadoId"] != null)
+                {
+                    int id = (int)Session["AutorSeleccionadoId"];
+
+                    
+                        var autor = _context.Autores.FirstOrDefault(l => l.Id == id);
+                        if (autor != null)
+                        {
+                        CargarAutorParaEdicion(id);
+                    }
+                        else
+                        {
+                            lblMensaje.Text = "autor no encontrado.";
+                        }
+                    
+                }
+                else
+                {
+                    lblMensaje.Text = "No se seleccionó ningún autor.";
+                }
+            }
+
         }
 
         private void CargarAutorParaEdicion(int autorId)
@@ -192,7 +226,7 @@ namespace CRUDOnboarding.Autores
         }
 
         // Evento para actualizar autor existente
-        protected void btnActualizarAutor_Click(object sender, EventArgs e)
+        protected async void btnActualizarAutor_Click(object sender, EventArgs e)
         {
             try
             {
@@ -220,56 +254,60 @@ namespace CRUDOnboarding.Autores
                 autor.Nacionalidad = txtNacionalidad.Text.Trim();
 
                 // Parse FechaNacimiento if provided
-                if (!string.IsNullOrWhiteSpace(txtFechaNacimiento.Text))
-                {
-                    if (DateTime.TryParse(txtFechaNacimiento.Text, out DateTime fechaNacimiento))
-                    {
-                        autor.FechaNacimiento = fechaNacimiento;
-                    }
-                    else
-                    {
-                        lblMensaje.Text = "Formato de fecha de nacimiento inválido.";
-                        lblMensaje.CssClass = "alert alert-danger";
-                        return;
-                    }
-                }
-                else
-                {
-                    autor.FechaNacimiento = null; // Clear if empty
-                }
-
-                // Handle new image if one was uploaded
-                //if (fileUploadFotoPerfil.HasFile)
+                //if (!string.IsNullOrWhiteSpace(txtFechaNacimiento.Text))
                 //{
-                //    string mensaje;
-                //    if (_imagenService.ValidarArchivo(fileUploadFotoPerfil.PostedFile, out mensaje))
+                //    if (DateTime.TryParse(txtFechaNacimiento.Text, out DateTime fechaNacimiento))
                 //    {
-                //        // Delete previous image
-                //        if (!string.IsNullOrEmpty(autor.FotoPerfil))
-                //        {
-                //            _imagenService.EliminarImagen(autor.FotoPerfil);
-                //        }
-
-                //        // Save new image
-                //        string rutaImagen = _imagenService.GuardarImagen("Autores", fileUploadFotoPerfil.PostedFile, autor.Id);
-                //        autor.FotoPerfil = rutaImagen;
-
-                //        // Update preview
-                //        imgPreview.ImageUrl = ResolveUrl(rutaImagen);
-                //        imgPreview.Visible = true;
+                //        autor.FechaNacimiento = fechaNacimiento;
                 //    }
                 //    else
                 //    {
-                //        lblMensaje.Text = "Error en la imagen: " + mensaje;
+                //        lblMensaje.Text = "Formato de fecha de nacimiento inválido.";
                 //        lblMensaje.CssClass = "alert alert-danger";
                 //        return;
                 //    }
                 //}
+                //else
+                //{
+                //    autor.FechaNacimiento = null; // Clear if empty
+                //}
 
-                //_context.Entry(autor).State = System.Data.Entity.EntityState.Modified;
-                //_context.SaveChanges();
+                //Handle new image if one was uploaded
+                if (fileUploadFotoPerfil.HasFile)
+                {
+                    HttpPostedFile archivo = fileUploadFotoPerfil.PostedFile;
+                    string mensaje;
+                    if (_imagenService.ValidarArchivo(archivo, out mensaje))
+                    {
+                        // Delete previous image
+                        //if (!string.IsNullOrEmpty(autor.FotoPerfil))
+                        //{
+                        //    await _imagenService.EliminarImagen(autor.FotoPerfil);
+                        //}
+                        string rutaImagen = await _imagenService.GuardarImagenAutorAsync(archivo, autor.Id);
+                        //autor.FotoPerfil = rutaImagen;
+
+                        // Save new image
+                        //string rutaImagen = _imagenService.GuardarImagen("Autores", fileUploadFotoPerfil.PostedFile, autor.Id);
+                        autor.FotoPerfil = rutaImagen;
+
+                        // Update preview
+                        imgPreview.ImageUrl = ResolveUrl(rutaImagen);
+                        imgPreview.Visible = true;
+                    }
+                    else
+                    {
+                        lblMensaje.Text = "Error en la imagen: " + mensaje;
+                        lblMensaje.CssClass = "alert alert-danger";
+                        return;
+                    }
+                }
+
+                _context.Entry(autor).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
 
                 lblMensaje.Text = "Autor actualizado exitosamente";
+                lblMensaje.Visible = true;
                 lblMensaje.CssClass = "alert alert-success";
             }
             catch (Exception ex)

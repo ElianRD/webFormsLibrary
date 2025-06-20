@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ActualizarAutor.aspx.cs" Inherits="CRUDOnboarding.Autores.ActualizarAutor" %>
+﻿<%@ Page Title=""  Async="true"  Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ActualizarAutor.aspx.cs" Inherits="CRUDOnboarding.Autores.ActualizarAutor" %>
 
 <asp:Content ID="HeadCrearAutor" ContentPlaceHolderID="head" runat="server">
     <title>Gestión de Autores</title>
@@ -52,7 +52,8 @@
 
 
 
-    <h1>Panel de Autores</h1>
+    <h1>Panel para Actualizar Autor</h1>
+     <asp:Label ID="lblMensaje" runat="server" Visible="false"></asp:Label>
       <div class="tab-menu">
     <a href="#" class="active">List Books</a>
     <a href="#">Create Book</a>
@@ -83,8 +84,8 @@
             </div>
         </div>
     </div>
-
-    <h2>Crear Autor</h2>
+     <asp:Label ID="Label1" runat="server" Visible="false"></asp:Label>
+    <h2>Actualizar Autor</h2>
       <form id="form1" runat="server">
         <div class="container mt-4">
             <div class="row">
@@ -94,7 +95,7 @@
                             <h3>Información del Autor</h3>
                         </div>
                         <div class="card-body">
-                            <asp:Label ID="lblMensaje" runat="server" Visible="false"></asp:Label>
+                           
                             
                             <asp:HiddenField ID="hfAutorId" runat="server" />
                             
