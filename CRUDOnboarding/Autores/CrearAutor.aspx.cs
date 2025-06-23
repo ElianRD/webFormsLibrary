@@ -26,53 +26,6 @@ namespace CRUDOnboarding.Autores
         }
 
 
-
-
-        // Evento para guardar un nuevo libro
-        //protected async void btnGuardarLibro_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        var libro = new Libro
-        //        {
-        //            Titulo = txtTitulo.Text.Trim(),
-        //            ISBN = txtISBN.Text.Trim(),
-        //            Descripcion = txtDescripcion.Text.Trim(),
-        //            Precio = decimal.Parse(txtPrecio.Text),
-        //            Stock = int.Parse(txtStock.Text),
-        //            EditorialId = int.Parse(ddlEditorial.SelectedValue),
-        //            // ... otras propiedades
-        //        };
-
-        //        _context.Libros.Add(libro);
-        //        _context.SaveChanges();
-
-        //        if (fileUploadPortada.HasFile)
-        //        {
-        //            // Convertir a HttpPostedFileBase
-        //            HttpPostedFileBase archivoBase = new HttpPostedFileWrapper(fileUploadPortada.PostedFile);
-
-        //            string rutaImagen = await _imagenService.GuardarImagenLibroAsync(archivoBase, libro.Id);
-        //            libro.ImagenPortada = rutaImagen;
-
-        //            _context.Entry(libro).State = System.Data.Entity.EntityState.Modified;
-        //            _context.SaveChanges();
-
-        //            imgPreview.ImageUrl = ResolveUrl(rutaImagen);
-        //            imgPreview.Visible = true;
-        //        }
-
-        //        lblMensaje.Text = "Libro guardado exitosamente";
-        //        lblMensaje.CssClass = "alert alert-success";
-        //        LimpiarFormulario();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        lblMensaje.Text = "Error al guardar: " + ex.Message;
-        //        lblMensaje.CssClass = "alert alert-danger";
-        //    }
-        //}
-
         protected void Page_Load(object sender, EventArgs e)
         {
             _context = new LibreriaDbContext(); // Initialize your DbContext

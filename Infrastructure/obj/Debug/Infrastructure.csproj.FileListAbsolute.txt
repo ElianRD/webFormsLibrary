@@ -18,3 +18,23 @@ C:\Users\ealmonte\source\repos\CRUDOnboarding\Infrastructure\obj\Debug\Infrastru
 C:\Users\ealmonte\source\repos\CRUDOnboarding\Infrastructure\obj\Debug\Infrastr.15EFFBFE.Up2Date
 C:\Users\ealmonte\source\repos\CRUDOnboarding\Infrastructure\obj\Debug\Infrastructure.dll
 C:\Users\ealmonte\source\repos\CRUDOnboarding\Infrastructure\obj\Debug\Infrastructure.pdb
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\bin\Debug\Infrastructure.dll.config
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\bin\Debug\Infrastructure.dll
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\bin\Debug\Infrastructure.pdb
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\bin\Debug\Application.dll
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\bin\Debug\Domain.dll
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\bin\Debug\EntityFramework.dll
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\bin\Debug\Domain.pdb
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\bin\Debug\Domain.dll.config
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\bin\Debug\Application.pdb
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\bin\Debug\Application.dll.config
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\bin\Debug\EntityFramework.xml
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\obj\Debug\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\obj\Debug\Infrastructure.Migrations.Inicial.resources
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\obj\Debug\Infrastructure.csproj.GenerateResource.cache
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\obj\Debug\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\obj\Debug\Infrastr.15EFFBFE.Up2Date
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\obj\Debug\Infrastructure.dll
+C:\Users\Elian RD\Desktop\webFormsLibrary\Infrastructure\obj\Debug\Infrastructure.pdb

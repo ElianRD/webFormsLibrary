@@ -11,6 +11,7 @@
             padding: 5px;
             margin: 10px 0;
         }
+
         .file-upload-container {
             border: 2px dashed #ccc;
             border-radius: 10px;
@@ -18,74 +19,56 @@
             text-align: center;
             margin: 10px 0;
         }
-        .file-upload-container:hover {
-            border-color: #007bff;
-            background-color: #f8f9fa;
-        }
+
+            .file-upload-container:hover {
+                border-color: #007bff;
+                background-color: #f8f9fa;
+            }
 
         .tab-menu {
-      display: flex;
-      border-bottom: 1px solid #ddd;
-      margin: 20px 0;
-    }
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin: 20px 0;
+        }
 
-    .tab-menu a {
-      padding: 10px 20px;
-      text-decoration: none;
-      color: #1d4ed8;
-      font-weight: bold;
-      border-bottom: 3px solid transparent;
-      transition: 0.3s;
-    }
+            .tab-menu a {
+                padding: 10px 20px;
+                text-decoration: none;
+                color: #1d4ed8;
+                font-weight: bold;
+                border-bottom: 3px solid transparent;
+                transition: 0.3s;
+            }
 
-    .tab-menu a.active {
-      color: #000;
-      border-bottom: 3px solid #1d4ed8;
-    }
+                .tab-menu a.active {
+                    color: #000;
+                    border-bottom: 3px solid #1d4ed8;
+                }
 
-    .tab-menu a:hover {
-      color: #1d4ed8;
-    }
+            .tab-menu :hover {
+                color: #1d4ed8;
+            }
+
+            .tab-menu a:hover {
+                color: black;
+            }
+
+            .tab-menu .active:hover {
+                color: #1d4ed8;
+            }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent1" runat="server">
 
 
 
-    <h1>Panel de Autores</h1>
-      <div class="tab-menu">
-    <a href="#" class="active">List Books</a>
-    <a href="#">Create Book</a>
-  </div>
-    <div class="row my-4">
-        <div class="col-md-3">
-            <div class="card text-white bg-primary mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Total Libros</h5>
-                    <p class="card-text">1,250</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card text-white bg-success mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Ventas Hoy</h5>
-                    <p class="card-text">$345</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card text-white bg-warning mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Clientes</h5>
-                    <p class="card-text">320</p>
-                </div>
-            </div>
-        </div>
+    <h1>Crear Autor</h1>
+    <div class="tab-menu">
+        <a href="/Autores/Autores" >Lista de autores</a>
+        <a href="#" class="active">crear autor</a>
     </div>
-
-    <h2>Crear Autor</h2>
-      <form id="form1" runat="server">
+ 
+    <form id="form1" runat="server">
         <div class="container mt-4">
             <div class="row">
                 <div class="col-md-8">
@@ -95,24 +78,24 @@
                         </div>
                         <div class="card-body">
                             <asp:Label ID="lblMensaje" runat="server" Visible="false"></asp:Label>
-                            
+
                             <asp:HiddenField ID="hfAutorId" runat="server" />
-                            
+
                             <div class="mb-3">
                                 <label for="txtNombre" class="form-label">Nombre *</label>
-                                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" MaxLength="100" ></asp:TextBox>
+                                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" MaxLength="100"></asp:TextBox>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label for="txtApellido" class="form-label">Apellido *</label>
-                                <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" MaxLength="100" ></asp:TextBox>
+                                <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" MaxLength="100"></asp:TextBox>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label for="txtBiografia" class="form-label">Biografía</label>
                                 <asp:TextBox ID="txtBiografia" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="4" MaxLength="1000"></asp:TextBox>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
@@ -127,7 +110,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                 <asp:Button ID="btnGuardarAutor" runat="server" Text="Guardar Autor" CssClass="btn btn-primary" OnClick="btnGuardarAutor_Click" />
                                 <asp:Button ID="btnActualizarAutor" runat="server" Text="Actualizar Autor" CssClass="btn btn-warning" OnClick="btnActualizarAutor_Click" Visible="false" />
@@ -136,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">
@@ -145,16 +128,15 @@
                         <div class="card-body">
                             <div class="file-upload-container">
                                 <asp:FileUpload ID="fileUploadFotoPerfil" runat="server" CssClass="form-control" accept=".jpg,.jpeg,.png,.gif" />
-                                <small class="form-text text-muted mt-2">
-                                    Formatos permitidos: JPG, PNG, GIF<br/>
+                                <small class="form-text text-muted mt-2">Formatos permitidos: JPG, PNG, GIF<br />
                                     Tamaño máximo: 5MB
                                 </small>
                             </div>
-                            
+
                             <div class="text-center">
                                 <asp:Image ID="imgPreview" runat="server" CssClass="image-preview" Visible="false" />
                             </div>
-                            
+
                             <div class="d-grid mt-2">
                                 <asp:Button ID="btnPreview" runat="server" Text="Vista Previa" CssClass="btn btn-outline-secondary btn-sm" OnClick="fileUploadFotoPerfil_FileUploaded" />
                             </div>
@@ -162,9 +144,9 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
-        
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
             // Función para limpiar formulario
@@ -175,22 +157,22 @@
                 document.getElementById('<%= txtFechaNacimiento.ClientID %>').value = '';
                 document.getElementById('<%= txtNacionalidad.ClientID %>').value = '';
                 document.getElementById('<%= fileUploadFotoPerfil.ClientID %>').value = '';
-                
+
                 // Ocultar imagen preview
                 var imgPreview = document.getElementById('<%= imgPreview.ClientID %>');
                 if (imgPreview) imgPreview.style.display = 'none';
-                
+
                 // Limpiar mensaje
                 var lblMensaje = document.getElementById('<%= lblMensaje.ClientID %>');
                 if (lblMensaje) lblMensaje.style.display = 'none';
             }
-            
+
             // Preview de imagen en cliente (opcional)
-            document.getElementById('<%= fileUploadFotoPerfil.ClientID %>').addEventListener('change', function(e) {
+            document.getElementById('<%= fileUploadFotoPerfil.ClientID %>').addEventListener('change', function (e) {
                 var file = e.target.files[0];
                 if (file) {
                     var reader = new FileReader();
-                    reader.onload = function(e) {
+                    reader.onload = function (e) {
                         var imgPreview = document.getElementById('<%= imgPreview.ClientID %>');
                         imgPreview.src = e.target.result;
                         imgPreview.style.display = 'block';
@@ -198,7 +180,7 @@
                     reader.readAsDataURL(file);
                 }
             });
-            
+
             // Función para mostrar mensajes con auto-hide
             function mostrarMensaje(mensaje, tipo) {
                 var lblMensaje = document.getElementById('<%= lblMensaje.ClientID %>');

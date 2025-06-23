@@ -144,7 +144,7 @@
     <Content Include="Libros\ActualizarLibro.aspx" />
     <Content Include="Libros\CrearLibro.aspx" />
     <Content Include="Libros\Libros.aspx" />
-    <Content Include="Login\WebForm1.aspx" />
+    <Content Include="Login\Login.aspx" />
     <Content Include="Login\WebForm2.aspx" />
     <Content Include="Resources\css\StyleSheet1.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -382,12 +382,12 @@
     <Compile Include="Libros\Libros.aspx.designer.cs">
       <DependentUpon>Libros.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login\WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>

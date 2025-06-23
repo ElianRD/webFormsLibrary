@@ -32,7 +32,7 @@
     .tab-menu a {
       padding: 10px 20px;
       text-decoration: none;
-      color: #1d4ed8;
+      color: black;
       font-weight: bold;
       border-bottom: 3px solid transparent;
       transition: 0.3s;
@@ -55,9 +55,9 @@
     <h1>Panel para Actualizar Autor</h1>
      <asp:Label ID="lblMensaje" runat="server" Visible="false"></asp:Label>
       <div class="tab-menu">
-    <a href="#" class="active">List Books</a>
-    <a href="#">Create Book</a>
-  </div>
+     <a href="/Autores/Autores">Lista de autores</a>
+     <a href="/Autores/CrearAutor">crear autores</a>
+ </div>
     <div class="row my-4">
         <div class="col-md-3">
             <div class="card text-white bg-primary mb-3">

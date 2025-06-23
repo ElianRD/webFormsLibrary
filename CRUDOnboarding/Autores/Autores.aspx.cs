@@ -16,19 +16,9 @@ namespace CRUDOnboarding.Autores
 {
     public partial class Autores : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected async void Page_Load(object sender, EventArgs e)
         {
-  
-        }
-        private AutoresUseCase CrearAutoresUseCase()
-        {
-            var context = new LibreriaDbContext();
-            var repo = new AutorRepository(context);
-            return new AutoresUseCase(repo);
-        }
 
-        protected async void BtnLoad_Click(object sender, EventArgs e)
-        {
             try
             {
                 var useCase = CrearAutoresUseCase();
@@ -40,20 +30,31 @@ namespace CRUDOnboarding.Autores
             {
                 //lblMensaje.Text = "Error al cargar autores: " + ex.Message;
             }
+
         }
+        private AutoresUseCase CrearAutoresUseCase()
+        {
+            var context = new LibreriaDbContext();
+            var repo = new AutorRepository(context);
+            return new AutoresUseCase(repo);
+        }
+
+       
         protected void gvAutores_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Actualizar")
             {
-                int libroId = Convert.ToInt32(e.CommandArgument);
-                Session["AutorSeleccionadoId"] = libroId;
-                Response.Redirect("ActualizarAutor.aspx");
+                int autorId = Convert.ToInt32(e.CommandArgument);
+                Session["AutorSeleccionadoId"] = autorId;
+                Response.Redirect($"ActualizarAutor.aspx?id={autorId}", false);
+                //Response.Redirect("DetalleLibro.aspx?id=5", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
 
             if (e.CommandName == "Eliminar")
             {
-                int libroId = Convert.ToInt32(e.CommandArgument);
-                EliminarAutor(libroId);
+                int autorId = Convert.ToInt32(e.CommandArgument);
+                EliminarAutor(autorId);
                 CargarAutores(); 
             }
         }

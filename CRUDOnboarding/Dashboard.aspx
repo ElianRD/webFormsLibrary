@@ -33,40 +33,57 @@
         </div>
 
         <h2>Libros recientes</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Título</th>
-                    <th>Autor</th>
-                    <th>Categoría</th>
-                    <th>Precio</th>
-                    <th>Stock</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>El Quijote</td>
-                    <td>Miguel de Cervantes</td>
-                    <td>Clásico</td>
-                    <td>$20</td>
-                    <td>35</td>
-                </tr>
-                <tr>
-                    <td>Cien años de soledad</td>
-                    <td>Gabriel García Márquez</td>
-                    <td>Realismo mágico</td>
-                    <td>$25</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>1984</td>
-                    <td>George Orwell</td>
-                    <td>Distopía</td>
-                    <td>$18</td>
-                    <td>50</td>
-                </tr>
-            </tbody>
-        </table>
-
+     <form id="form1" runat="server">
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">Mi Sistema</div>
+                <div class="user-info">
+                    <span>Bienvenido, <asp:Label ID="lblUsuario" runat="server"></asp:Label></span>
+                    <asp:Button ID="btnLogout" runat="server" Text="Cerrar Sesión" CssClass="btn-logout" OnClick="btnLogout_Click" />
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="welcome-card">
+                <h2>¡Bienvenido al Dashboard!</h2>
+                <p>Has iniciado sesión exitosamente el <asp:Label ID="lblFechaLogin" runat="server"></asp:Label></p>
+                <p>Tu sesión está activa desde hace <asp:Label ID="lblTiempoSesion" runat="server"></asp:Label></p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">150</div>
+                    <div class="stat-label">Usuarios Activos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">48</div>
+                    <div class="stat-label">Pedidos Hoy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">92%</div>
+                    <div class="stat-label">Rendimiento</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$15,890</div>
+                    <div class="stat-label">Ventas del Mes</div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3 class="section-title">Actividad Reciente</h3>
+                <p>Esta es el área principal donde puedes mostrar el contenido de tu aplicación.</p>
+                <p>Solo los usuarios autenticados pueden acceder a esta página.</p>
+                
+                <h4>Información de la Sesión:</h4>
+                <ul>
+                    <li>Usuario: <asp:Label ID="lblUsuarioInfo" runat="server"></asp:Label></li>
+                    <li>Fecha de Login: <asp:Label ID="lblFechaLoginInfo" runat="server"></asp:Label></li>
+                    <li>IP del Cliente: <asp:Label ID="lblIP" runat="server"></asp:Label></li>
+                    <li>Navegador: <asp:Label ID="lblUserAgent" runat="server"></asp:Label></li>
+                </ul>
+            </div>
+        </div>
+    </form>
     </div>
 </asp:Content>

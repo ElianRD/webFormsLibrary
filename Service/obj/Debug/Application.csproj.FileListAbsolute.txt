@@ -13,3 +13,18 @@ C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\obj\Debug\Application.cspr
 C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\obj\Debug\Applicat.44B5EDA2.Up2Date
 C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\obj\Debug\Application.dll
 C:\Users\ealmonte\source\repos\CRUDOnboarding\Service\obj\Debug\Application.pdb
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\bin\Debug\Application.dll.config
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\bin\Debug\Application.dll
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\bin\Debug\Application.pdb
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\bin\Debug\Domain.dll
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\bin\Debug\EntityFramework.dll
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\bin\Debug\Domain.pdb
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\bin\Debug\Domain.dll.config
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\bin\Debug\EntityFramework.xml
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\obj\Debug\Application.csproj.AssemblyReference.cache
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\obj\Debug\Application.csproj.CoreCompileInputs.cache
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\obj\Debug\Applicat.44B5EDA2.Up2Date
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\obj\Debug\Application.dll
+C:\Users\Elian RD\Desktop\webFormsLibrary\Service\obj\Debug\Application.pdb

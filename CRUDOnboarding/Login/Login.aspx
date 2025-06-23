@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="CRUDOnboarding.Login.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CRUDOnboarding.Login.Login" %>
 
 <!DOCTYPE html>
 
@@ -13,6 +13,17 @@
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="/Resources/css/StyleSheet1.css" rel="stylesheet" type="text/css" />
+    <style>
+         .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 8px;
+        }
+    </style>
 
 </head>
 <body>
@@ -33,12 +44,15 @@
 
                     <div class="mb-4">
                         <label class="block text-[#0d151c] text-base font-medium mb-2">Username</label>
-                        <asp:TextBox ID="txtUser" placeholder="Enter your username"
+                        <asp:TextBox ID="txtUsuario" placeholder="Enter your username"
                             CssClass="w-full rounded-xl bg-[#e7edf4] text-[#0d151c] h-14 px-4 placeholder:text-[#49749c] focus:outline-none"
                             type="text" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvUser" runat="server" ControlToValidate="txtUser"
-                            CssClass="mi-clase-error" ErrorMessage="La contraseña es obligatoria." Display="Dynamic" ValidationGroup="validar"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvUser" runat="server" ControlToValidate="txtUsuario"
+                            CssClass="mi-clase-error" ErrorMessage="el nombre de usuario es obligatorio." Display="Dynamic" ValidationGroup="validar"></asp:RequiredFieldValidator>
 
+                    </div>
+                    <div class="checkbox-container">
+                        <asp:CheckBox ID="chkRecordar" runat="server" Text="Recordarme" />
                     </div>
 
                     <div class="mb-4" runat="server">
@@ -53,11 +67,11 @@
                     </div>
 
                     <div class="mb-4">
-                        <asp:Button ID="Button1" CssClass="w-full h-10 rounded-full bg-[#0b80ee] text-white font-bold text-sm" runat="server" ValidationGroup="validar" Text="Log In" />
-
+                        <asp:Button ID="Button1" CssClass="w-full h-10 rounded-full bg-[#0b80ee] text-white font-bold text-sm" runat="server" ValidationGroup="validar" Text="Log In" OnClick="btnLogin_Click" />
+                        <asp:Label ID="lblMensaje" runat="server" Visible="false"></asp:Label>
                     </div>
 
-                    <p class="text-center text-[#49749c] text-sm underline cursor-pointer">Forgot Password?</p>
+                    <%--<p class="text-center text-[#49749c] text-sm underline cursor-pointer">Forgot Password?</p>--%>
                 </div>
 
             </div>
