@@ -38,6 +38,17 @@
 
                 <!-- Login Form -->
                 <div class="w-full md:w-1/2 p-8">
+                    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+
+        <div style="margin: 50px; font-family: Arial; font-size: 16px;">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <asp:Label ID="lblHora" runat="server" Text="Hora actual: " /> <asp:Button ID="btnActualizar" runat="server" Text="Actualizar Hora" OnClick="btnActualizar_Click" />
+                    <br /><br />
+                   
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
                     <div class="mb-6 text-center">
                         <h2 class="text-[#0d151c] text-2xl font-bold">Welcome Back</h2>
                     </div>

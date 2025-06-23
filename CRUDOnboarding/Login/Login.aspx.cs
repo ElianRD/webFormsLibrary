@@ -13,11 +13,19 @@ namespace CRUDOnboarding.Login
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                lblHora.Text = "Hora actual: " + DateTime.Now.ToString("HH:mm:ss");
+            }
             // Verificar si el usuario ya está autenticado
             if (User.Identity.IsAuthenticated)
             {
                 Response.Redirect("~/Dashboard");
             }
+        }
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            lblHora.Text = "Hora actual: " + DateTime.Now.ToString("HH:mm:ss");
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
